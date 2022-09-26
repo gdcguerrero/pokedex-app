@@ -9,7 +9,7 @@ import { AuthService } from './services/auth.service';
 export class AppComponent {
   title = 'pokedex-app';
   
-  constructor(private authSesion: AuthService) {
-    authSesion.showSession();
+  constructor(private authService: AuthService) {
+    authService.showSession();
   }
 }
