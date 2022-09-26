@@ -6,6 +6,7 @@ import { ListComponent } from './list/list.component';
 import { PokedexComponent } from './pokedex/pokedex.component';
 import { AppComponent } from 'src/app/app.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
+import { PokemonResolver } from '../../../services/resolvers/pokemon/pokemon.resolver';
 
 const routes: Routes = [
   {
@@ -24,13 +25,11 @@ const routes: Routes = [
         component: FindComponent
       },
       {
-        path: 'pokemon',
-        component: PokemonComponent
-      },
-      {
-        path: 'pokemon/id',
+        path: 'pokemon/:id',
         component: PokemonComponent,
-        pathMatch: 'full'
+        resolve: {
+          pokemon: PokemonResolver
+        }
       },
       {
         path: 'pokedex',

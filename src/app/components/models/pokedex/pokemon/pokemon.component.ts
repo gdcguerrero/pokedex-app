@@ -8,16 +8,18 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PokemonComponent implements OnInit {
 
-  id: number | undefined
+  id: number | undefined;
   //id!: number  --es lo mismo que el de arriba
 
   constructor(private activateRouter: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.activateRouter.params.subscribe(rest => {
-      this.id = rest['id']
+      this.id = rest['id'];
       console.log(this.id);
-      
+    });
+    this.activateRouter.data.subscribe(response => {
+      console.log(response);
     })
   }
 

@@ -16,8 +16,8 @@ const routes: Routes = [
   {
     path: 'pokedex',
     loadChildren: () => import('./components/models/pokedex/pokedex-routing.module').then(m => m.PokedexRoutingModule),
-    canLoad: [AuthGuard],
-    canActivate:[AuthGuard]
+    //canLoad: [AuthGuard],
+    //canActivate:[AuthGuard]
   },
   {
     path: '404',
