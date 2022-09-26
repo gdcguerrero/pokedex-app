@@ -12,7 +12,7 @@ const routes: Routes = [
         component: LoginComponent
       },
       {
-        path: 'enroll',
+        path: 'enroll/:id',
         component: EnrollComponent
       },
       {
