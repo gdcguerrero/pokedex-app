@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 const routes: Routes = [
   {
     path: '',
-    component: AppComponent,
-    pathMatch : 'full'
+    component: NotFoundComponent
+    //pathMatch : 'full'
   },
   {
     path: 'authLazy',
     loadChildren: () => import ('./components/models/auth/auth.module').then(m => m.AuthModule)
+  },
+  {
+    path: 'pokedex',
+    loadChildren: () => import('./components/models/pokedex/pokedex-routing.module').then(m => m.PokedexRoutingModule)
   },
   {
     path: '404',

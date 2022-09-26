@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { EnrollComponent } from './enroll/enroll.component';
+import { AppComponent } from 'src/app/app.component';
 
 const routes: Routes = [
   {
@@ -12,12 +13,12 @@ const routes: Routes = [
         component: LoginComponent
       },
       {
-        path: 'enroll/:id',
+        path: 'enroll', //enroll/:id --para recibir parametros, ocupalo con pathMarth
         component: EnrollComponent
       },
       {
         path: '**',
-        redirectTo: 'login'
+        component: AppComponent
       },
     ]
   }
