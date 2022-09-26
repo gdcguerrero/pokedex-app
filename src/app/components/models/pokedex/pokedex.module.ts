@@ -18,13 +18,6 @@ import { PokedexComponent } from './pokedex/pokedex.component';
   ],
   imports: [
     CommonModule
-  ],
-  exports: [
-    ListComponent,
-    AddComponent,
-    FindComponent,
-    PokemonComponent,
-    PokedexComponent
   ]
 })
 export class PokedexModule { }
