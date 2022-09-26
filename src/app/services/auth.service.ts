@@ -4,16 +4,20 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-  public auth: boolean = true;
+  public auth: boolean = false;
   constructor() { }
 
-  login(){
-    this.auth = true
-  }
   logout(){
     this.auth = false
+    localStorage.clear();
   }
+  login(){
+    this.auth = true
+    localStorage.setItem('auth',this.auth.toString())
+  }
+
   showSession(){
-    return this.auth
+      this.auth = (localStorage.getItem('auth')?.toLocaleLowerCase() == 'true')
+      return this.auth
   }
 }
