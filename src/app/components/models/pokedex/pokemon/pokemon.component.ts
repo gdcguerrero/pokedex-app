@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-pokemon',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokemonComponent implements OnInit {
 
-  constructor() { }
+  id: number | undefined
+  //id!: number  --es lo mismo que el de arriba
+
+  constructor(private activateRouter: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.activateRouter.params.subscribe(rest => {
+      this.id = rest['id']
+      console.log(this.id);
+      
+    })
   }
 
 }

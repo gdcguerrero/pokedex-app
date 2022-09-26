@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-not-found',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotFoundComponent implements OnInit {
 
-  constructor() { }
+  constructor(public authService: AuthService) { }
 
   ngOnInit(): void {
+  }
+
+  login(){
+    this.authService.login()
+  }
+  logout(){
+    this.authService.logout()
+  }
+  showSession(){
+    return this.authService.showSession()
   }
 
 }
