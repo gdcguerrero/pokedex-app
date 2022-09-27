@@ -4,8 +4,19 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
+
   public auth: boolean = false;
+  public name!: string;
+  public password!: string;
+  public token! :string;
+
   constructor() { }
+
+  saveSession(usaername:string, password:string){
+    localStorage.setItem('username',this.auth.toString())
+    localStorage.setItem('password',this.auth.toString())
+  }
+
 
   logout(){
     this.auth = false

@@ -32,6 +32,10 @@ const routes: Routes = [
         }
       },
       {
+        path: 'edit/:id',
+        component : PokemonComponent
+      },
+      {
         path: 'pokedex',
         component: PokedexComponent
       },
