@@ -4,8 +4,7 @@ import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-not-found',
-  templateUrl: './not-found.component.html',
-  styleUrls: ['./not-found.component.scss']
+  templateUrl: './not-found.component.html'
 })
 export class NotFoundComponent implements OnInit {
 
@@ -36,9 +35,5 @@ export class NotFoundComponent implements OnInit {
     let username: string = this.loginForm.get('username')?.value;
     let password: string = this.loginForm.get('password')?.value;
     this.authService.saveSession(username,password)
-  }
-
-  getToken() {
-
   }
 }
